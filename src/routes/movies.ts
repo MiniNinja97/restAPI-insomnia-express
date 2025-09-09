@@ -34,7 +34,6 @@ export const movies: Movie[] = [
 ];
 
 export const reviews: Review[] = [
-  { movieId: 1, reviewer: "Alice", rating: 9 },
   { movieId: 1, reviewer: "Bob", rating: 10 },
   { movieId: 2, reviewer: "Charlie", rating: 8 },
   { movieId: 3, reviewer: "David", rating: 9 },
