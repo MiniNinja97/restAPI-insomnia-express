@@ -4,17 +4,13 @@ import moviesRouter from "./routes/routing.js";
 import cors from 'cors';
 import authenticate from "./middleware/auth.js";
 import hiddenMovieRouter from "./routes/hiddenMovie.js";
+import logger from "./middleware/logger.js";
 
 
 
 const app = express();
 const port = 12345;
 
-
-const logger: RequestHandler = (req, res, next) => {
-  console.log(`${req.method} ${req.url}`, req.body);
-  next();
-};
 
 app.use(cors());
 app.use(express.json());
