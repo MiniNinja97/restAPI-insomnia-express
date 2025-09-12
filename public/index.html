@@ -3,25 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Movies from API</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Movies</h1>
   <button onclick="loadMovies()">Load Movies</button>
-  <ul id="movieList"></ul>
+  <div id="filmList" class="film-list"></div>
 
   <script>
     async function loadMovies() {
       const res = await fetch("/movies");
       const movies = await res.json();
-      const list = document.getElementById("movieList");
-      list.innerHTML = "";
-      movies.forEach(m => {
-        const li = document.createElement("li");
-        li.textContent = `${m.title} (${m.releaseYear})`;
-        list.appendChild(li);
+      const filmList = document.getElementById("filmList");
+
+      // rensa tidigare innehåll
+      filmList.innerHTML = "";
+
+      movies.forEach(film => {
+        const card = document.createElement("div");
+        card.className = "film-card"; // klass för styling i CSS
+
+        const title = document.createElement("h3");
+        title.className = "film-title";
+        title.textContent = film.title;
+        card.appendChild(title);
+
+        const year = document.createElement("p");
+        year.className = "film-year";
+        year.textContent = `Release Year: ${film.releaseYear}`;
+        card.appendChild(year);
+
+        const url = document.createElement("p");
+        url.className = "film-url";
+        url.textContent = `URL: ${film.url || "N/A"}`;
+        card.appendChild(url);
+
+        filmList.appendChild(card);
       });
     }
   </script>
 </body>
 </html>
+
 
