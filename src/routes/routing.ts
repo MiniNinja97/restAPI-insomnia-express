@@ -2,8 +2,8 @@
 import express from "express";
 import type { Request, Response, Router } from "express";
 import * as Z from "zod";
-import type { Movie, Review } from "../data/types.js";
-import { movies, reviews } from "./movies.js"; 
+import type { Movie, Review } from "../types/types.js";
+import { movies, reviews } from "../data/movies.js";
 
 const router: Router = express.Router();
 

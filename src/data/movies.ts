@@ -1,7 +1,7 @@
 import express from "express";
 import type { Request, Response, Router } from "express";
 import * as Z from "zod";
-import type { Movie, Review } from "../data/types.js"; 
+import type { Movie, Review } from "../types/types.js";
 
 
 const router: Router = express.Router();
@@ -46,4 +46,4 @@ export const reviews: Review[] = [
   { movieId: 10, reviewer: "Mallory", rating: 8 }
 ];
 
-export {MovieSchema, ReviewSchema};
+export { MovieSchema, ReviewSchema };
