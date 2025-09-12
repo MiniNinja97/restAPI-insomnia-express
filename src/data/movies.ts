@@ -11,7 +11,8 @@ type ErrorRes = { error: string };
 const MovieSchema = Z.object({
   id: Z.number(),
   title: Z.string(),
-  releaseYear: Z.number()
+  releaseYear: Z.number(),
+  url: Z.string()
 });
 
 const ReviewSchema = Z.object({
@@ -21,16 +22,16 @@ const ReviewSchema = Z.object({
 });
 
 export const movies: Movie[] = [
-  { id: 1, title: "Spirited Away", releaseYear: 2001 },
-  { id: 2, title: "Princess Mononoke", releaseYear: 1997 },
-  { id: 3, title: "My Neighbor Totoro", releaseYear: 1988 },
-  { id: 4, title: "Howl's Moving Castle", releaseYear: 2004 },
-  { id: 5, title: "Kiki's Delivery Service", releaseYear: 1989 },
-  { id: 6, title: "The Wind Rises", releaseYear: 2013 },
-  { id: 7, title: "Ponyo", releaseYear: 2008 },
-  { id: 8, title: "Castle in the Sky", releaseYear: 1986 },
-  { id: 9, title: "The Tale of the Princess Kaguya", releaseYear: 2013 },
-  { id: 10, title: "The Boy and the Heron", releaseYear: 2023 }
+  { id: 1, title: "Spirited Away", releaseYear: 2001, url: "https://www.imdb.com/title/tt0245429/" },
+  { id: 2, title: "Princess Mononoke", releaseYear: 1997, url: "https://www.imdb.com/title/tt0119698/" },
+  { id: 3, title: "My Neighbor Totoro", releaseYear: 1988, url: "https://www.imdb.com/title/tt0096283/" },
+  { id: 4, title: "Howl's Moving Castle", releaseYear: 2004, url: "https://www.imdb.com/title/tt0347149/" },
+  { id: 5, title: "Kiki's Delivery Service", releaseYear: 1989, url: "https://www.imdb.com/title/tt0097814/" },
+  { id: 6, title: "The Wind Rises", releaseYear: 2013, url: "https://www.imdb.com/title/tt2013293/" },
+  { id: 7, title: "Ponyo", releaseYear: 2008, url: "https://www.imdb.com/title/tt0876563/" },
+  { id: 8, title: "Castle in the Sky", releaseYear: 1986, url: "https://www.imdb.com/title/tt0092067/" },
+  { id: 9, title: "The Tale of the Princess Kaguya", releaseYear: 2013, url: "https://www.imdb.com/title/tt2576852/" },
+  { id: 10, title: "The Boy and the Heron", releaseYear: 2023, url: "https://www.imdb.com/title/tt6718170/" }
 ];
 
 export const reviews: Review[] = [
