@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movies from API</title>
+</head>
+<body>
+  <h1>Movies</h1>
+  <button onclick="loadMovies()">Load Movies</button>
+  <ul id="movieList"></ul>
+
+  <script>
+    async function loadMovies() {
+      const res = await fetch("/movies");
+      const movies = await res.json();
+      const list = document.getElementById("movieList");
+      list.innerHTML = "";
+      movies.forEach(m => {
+        const li = document.createElement("li");
+        li.textContent = `${m.title} (${m.releaseYear})`;
+        list.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
+
